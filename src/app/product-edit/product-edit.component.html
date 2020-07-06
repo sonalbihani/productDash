@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row ">
+            <div class="col-lg-3"></div>
+          <div class="col-lg-6">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Edit Product</h1>
+              </div>
+              <form [formGroup]="editForm" (submit)="submitForm()" class="user">
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-user" id="name" formControlName= "name" placeholder="Product Name">
+                  <span *ngIf="editForm.get('name').touched && !editForm.get('name').valid">This field is required</span>
+              </div>
+              <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="number" class="form-control form-control-user" id="price" formControlName= "price" placeholder="Product Price (in INR)">
+                      <span *ngIf="editForm.get('price').touched && !editForm.get('price').valid">This field is required</span>
+                  </div>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="number" class="form-control form-control-user" id="quant" formControlName="quant" placeholder="Product Quantity">
+                      <span *ngIf="editForm.get('quant').touched && !editForm.get('quant').valid">This field is required</span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control form-control-user" id="seller" formControlName= "seller" placeholder="Seller Name">
+                  <span *ngIf="editForm.get('seller').touched && !editForm.get('seller').valid">This field is required</span>
+              </div>
+                <input type="submit" class="btn btn-primary btn-user btn-block">
+                  
+                <hr>
+              </form>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
